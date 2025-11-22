@@ -1,0 +1,170 @@
+import React, { useEffect, useState } from "react";
+import "./CoursePlayer.css";
+import Sidebar from "../Sidebar/sidebar";
+import { Box } from "@mui/material";
+
+const API_BASE = import.meta.env.VITE_API_BASE_URL;
+const UPLOADS_BASE = import.meta.env.VITE_UPLOADS_BASE;
+
+export default function CoursePlayer() {
+  const [courses, setCourses] = useState([]);
+  const [filteredCourses, setFilteredCourses] = useState([]);
+  const [loading, setLoading] = useState(true);
+
+  const [search, setSearch] = useState("");
+  const [category, setCategory] = useState("all");
+
+  const [currentPage, setCurrentPage] = useState(1);
+  const coursesPerPage = 12; // ⭐ 12 courses per page
+
+  useEffect(() => {
+    const fetchCourses = async () => {
+      try {
+        const res = await fetch(`${API_BASE}/dashboard/courses`, {
+          credentials: "include",
+        });
+        const data = await res.json();
+        setCourses(data);
+        setFilteredCourses(data);
+      } catch (err) {
+        console.error("Error fetching courses:", err);
+      } finally {
+        setLoading(false);
+      }
+    };
+    fetchCourses();
+  }, []);
+
+  const applyFilters = (searchValue, categoryValue) => {
+    let result = courses;
+
+    if (searchValue.trim()) {
+      result = result.filter((course) =>
+        course.course_name.toLowerCase().includes(searchValue.toLowerCase())
+      );
+    }
+
+    if (categoryValue !== "all") {
+      result = result.filter(
+        (course) =>
+          course.category?.toLowerCase() === categoryValue.toLowerCase()
+      );
+    }
+
+    setFilteredCourses(result);
+    setCurrentPage(1); // reset to first page after filter
+  };
+
+  const handleSearch = (value) => {
+    setSearch(value);
+    applyFilters(value, category);
+  };
+
+  const handleCategory = (value) => {
+    setCategory(value);
+    applyFilters(search, value);
+  };
+
+  if (loading) return <p>Loading...</p>;
+
+  // Pagination logic
+  const indexOfLastCourse = currentPage * coursesPerPage;
+  const indexOfFirstCourse = indexOfLastCourse - coursesPerPage;
+  const currentCourses = filteredCourses.slice(indexOfFirstCourse, indexOfLastCourse);
+  const totalPages = Math.ceil(filteredCourses.length / coursesPerPage);
+
+  const changePage = (page) => {
+    if (page >= 1 && page <= totalPages) setCurrentPage(page);
+  };
+
+  return (
+    <Box sx={{ display: "flex", minHeight: "100vh", bgcolor: "#f9fafb" }}>
+      <Sidebar />
+
+      <div className="cp-dashboard">
+        <div className="cp-container">
+
+          <section className="cp-section">
+            <div className="cp-header-row">
+
+              <h2 className="cp-title">All Courses</h2>
+
+              <div className="cp-header-controls">
+                <input
+                  type="text"
+                  className="cp-search-input"
+                  placeholder="Search courses..."
+                  value={search}
+                  onChange={(e) => handleSearch(e.target.value)}
+                />
+
+                <select
+                  className="cp-filter-dropdown"
+                  value={category}
+                  onChange={(e) => handleCategory(e.target.value)}
+                >
+                  <option value="all">All Categories</option>
+                  <option value="engineering">Engineering</option>
+                  <option value="computer science">Computer Science</option>
+                  <option value="iot">IoT</option>
+                  <option value="ai">AI</option>
+                </select>
+              </div>
+            </div>
+
+            <div className="cp-course-grid">
+              {currentCourses.length === 0 && <p>No matching courses found.</p>}
+
+              {currentCourses.map((course) => (
+                <div className="cp-card" key={course.course_id}>
+                  <img
+                    src={`${UPLOADS_BASE}/${course.course_image?.replace(/^.*uploads\//, "")}`}
+                    alt={course.course_name}
+                    className="cp-img"
+                    onError={(e) => (e.target.src = "/fallback.jpg")}
+                  />
+                  <div className="cp-info">
+                    <h3>{course.course_name}</h3>
+                    <p>{course.description}</p>
+                    <button className="cp-start-btn">Start Learning</button>
+                  </div>
+                </div>
+              ))}
+            </div>
+
+            {/* Pagination */}
+            <div className="cp-pagination">
+              <button
+                className="cp-pagination-btn"
+                onClick={() => changePage(currentPage - 1)}
+                disabled={currentPage === 1}
+              >
+                Prev
+              </button>
+
+              {[...Array(totalPages)].map((_, idx) => (
+                <button
+                  key={idx}
+                  className={`cp-page-box ${currentPage === idx + 1 ? "active" : ""}`}
+                  onClick={() => changePage(idx + 1)}
+                >
+                  {idx + 1}
+                </button>
+              ))}
+
+              <button
+                className="cp-pagination-btn"
+                onClick={() => changePage(currentPage + 1)}
+                disabled={currentPage === totalPages}
+              >
+                Next
+              </button>
+            </div>
+
+          </section>
+
+        </div>
+      </div>
+    </Box>
+  );
+}

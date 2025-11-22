@@ -1,0 +1,333 @@
+/* -------------------- Layout -------------------- */
+.signin-container {
+  display: flex;
+  width: 100%;
+  height: 100vh; /* full viewport */
+  background-color: #f9fafc2a;
+  font-family: "Inter", sans-serif;
+  overflow: hidden;
+}
+
+/* -------------------- LEFT PANEL -------------------- */
+.signin-left {
+  flex: 0.3;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  padding: 3rem;
+}
+
+.signin-title {
+  font-size: 2rem;
+  font-weight: 700;
+  color: #111827;
+  margin-bottom: 2rem;
+}
+
+.signin-title span {
+  color: #4f46e5;
+}
+
+/* -------------------- FORM -------------------- */
+.signin-form label {
+  display: block;
+  font-size: 0.9rem;
+  color: #374151;
+  margin-top: 1rem;
+  margin-bottom: 0.3rem;
+}
+
+.input-box {
+  position: relative;
+}
+
+
+.input-box .icon {
+  position: absolute;
+  top: 50%;
+  left: 10px;
+  transform: translateY(-50%);
+  color: #6b7280; /* neutral gray */
+  pointer-events: none;
+  background: none; /* remove blue background */
+  border: none;
+  width: 18px;
+  height: 18px;
+  padding: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+
+
+.input-box input {
+  width: 100%; /* full width */
+  padding: 10px 40px 10px 38px; /* left for lock, right for eye */
+  border: 1px solid #d1d5db;
+  border-radius: 6px;
+  font-size: 0.95rem;
+  outline: none;
+  transition: 0.2s ease;
+}
+.input-box .eye-icon {
+  position: absolute;
+  top: 50%;
+  right: 10px; /* inside the input */
+  transform: translateY(-50%);
+  cursor: pointer;
+  color: #6b7280;
+  z-index: 2;
+}
+
+
+
+.input-box input:focus {
+  border-color: #6366f1;
+  box-shadow: 0 0 0 2px #e0e7ff;
+}
+
+/* -------------------- BUTTON -------------------- */
+.login-btn {
+  display: block;
+  margin: 20px auto;
+  padding: 8px 18px;
+  font-size: 14px;
+  border-radius: 6px;
+  background-color: #007bff;
+  color: white;
+  border: none;
+  cursor: pointer;
+  transition: 0.3s;
+}
+
+.login-btn:hover {
+  background-color: #0056b3;
+}
+
+/* -------------------- SIGNUP LINK -------------------- */
+.signup-text {
+  margin-top: 1rem;
+  font-size: 0.9rem;
+  color: #6b7280;
+  text-align: center;
+}
+
+.signup-text a {
+  color: #4f46e5;
+  font-weight: 500;
+  text-decoration: none;
+}
+
+.signup-text a:hover {
+  text-decoration: underline;
+}
+
+/* -------------------- RIGHT PANEL (Image + Card) -------------------- */
+.signin-right {
+  flex: 0.7;
+  position: relative;
+  overflow: hidden;
+  height: 100vh;
+  box-shadow: -5px 0 20px rgba(0, 0, 0, 0.15); /* optional soft shadow */
+}
+/* Blurred and dimmed background image */
+.fluid-image {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: center;
+  z-index: 1;
+}
+
+/* Optional subtle dark gradient overlay for better text contrast */
+.signin-right::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  /* background: linear-gradient(
+    to bottom right,
+    rgba(0, 0, 0, 0.3),
+    rgba(136, 115, 177, 0.1)
+  ); */
+  z-index: 2;
+}
+
+/* Centered, static glass card */
+.overlay-card {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%); /* perfectly centered */
+  z-index: 2;
+  background: rgba(255, 255, 255, 0.226); /* slightly more solid for clarity */
+  /* backdrop-filter: blur(20px);  */
+  border-radius: 20px;
+  padding: 40px;
+  color: #111827;
+  text-align: center;
+  box-shadow: 0 8px 25px rgba(0, 0, 0, 0.3);
+  max-width: 400px;
+  width: 80%;
+  border: 1px solid rgba(255, 255, 255, 0.4);
+}
+
+/* Card heading and text */
+.overlay-card h2 {
+  font-size: 1.8rem;
+  font-weight: 700;
+  margin-bottom: 12px;
+  color: #111827;
+}
+
+.overlay-card p {
+  font-size: 1rem;
+  line-height: 1.5;
+  color: #222;
+}
+/* -------------------- RESPONSIVE -------------------- */
+@media (max-width: 900px) {
+  .signin-container {
+    flex-direction: column;
+  }
+
+  .signin-left {
+    padding: 2rem;
+  }
+
+  .signin-right {
+    height: 40vh;
+  }
+
+  .input-box input {
+    width: 100%;
+  }
+
+  .overlay-card {
+    padding: 20px;
+    font-size: 0.9rem;
+  }
+}
+/* -------------------- OVERLAY LOGO STYLE -------------------- */
+.overlay-logo {
+  width: 160px; /* Adjust width to your logo size */
+  height: auto;
+  display: block;
+  margin: 0 auto;
+  object-fit: contain;
+  filter: drop-shadow(0 4px 8px rgba(0, 0, 0, 0.3));
+  transition: transform 0.3s ease, filter 0.3s ease;
+}
+
+/* Subtle hover animation for logo */
+.overlay-logo:hover {
+  transform: scale(1.05);
+  filter: drop-shadow(0 6px 10px rgba(0, 0, 0, 0.35));
+}
+
+/* Optional soft glow for premium feel */
+.overlay-card::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  border-radius: 20px;
+  pointer-events: none;
+  background: radial-gradient(
+    circle at center,
+    rgba(255, 255, 255, 0.15) 0%,
+    transparent 70%
+  );
+  z-index: -1;
+}
+
+
+/* From Uiverse.io by mobinkakei */
+.cta {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 11px 33px;
+  text-decoration: none;
+  font-size: 18px;
+  color: white;
+  background: #00569a;
+  transition: 1s;
+  box-shadow: 6px 6px 0 #6ebf45;
+  transform: skewX(-15deg);
+  border: none;
+  cursor: pointer;
+  width: fit-content;
+  margin: 0 auto;
+}
+
+.cta:focus {
+  outline: none;
+}
+
+.cta:hover {
+  transition: 0.5s;
+  box-shadow: 10px 10px 0 #fbc638;
+}
+
+.cta .second {
+  transition: 0.5s;
+  margin-right: 0px;
+}
+
+.cta:hover .second {
+  transition: 0.5s;
+  margin-right: 45px;
+}
+
+.span {
+  transform: skewX(15deg);
+  font-weight: 600;
+}
+
+.second {
+  width: 20px;
+  margin-left: 30px;
+  position: relative;
+  top: 12%;
+}
+
+.one {
+  transition: 0.4s;
+  transform: translateX(-60%);
+}
+
+.two {
+  transition: 0.5s;
+  transform: translateX(-30%);
+}
+
+.cta:hover .three {
+  animation: color_anim 1s infinite 0.2s;
+}
+
+.cta:hover .one {
+  transform: translateX(0%);
+  animation: color_anim 1s infinite 0.6s;
+}
+
+.cta:hover .two {
+  transform: translateX(0%);
+  animation: color_anim 1s infinite 0.4s;
+}
+
+@keyframes color_anim {
+  0% {
+    fill: white;
+  }
+
+  50% {
+    fill: #fbc638;
+  }
+
+  100% {
+    fill: white;
+  }
+}
