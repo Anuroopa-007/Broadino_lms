@@ -351,7 +351,7 @@ useEffect(() => {
           <h4>Learner Feedback</h4>
           <h2>Trusted by Learners Around the World</h2>
           <p>
-            TANSAM-LMS has helped thousands of learners improve their skills,
+            Broadino has helped thousands of learners improve their skills,
             achieve goals, and grow through continuous learning.
           </p>
           <div className="trusted-stats">
@@ -376,7 +376,7 @@ useEffect(() => {
           </div>
           <div className="review-box">
             <p>
-              “TANSAM-LMS made learning engaging and easy to follow. The lessons
+              “Broadino made learning engaging and easy to follow. The lessons
               are clear, the instructors are great, and I love the flexibility.”
             </p>
             <h4>Dr. Emiliya Cart</h4>
@@ -389,10 +389,10 @@ useEffect(() => {
       <footer className="footer" id="blog">
         <div className="footer-top">
           <div className="footer-left">
-            <h2 className="footer-logo">TANSAM-LMS</h2>
+            <h2 className="footer-logo">Broadino</h2>
             <p>
               Providing accessible, high-quality education to learners
-              everywhere. Learn, grow, and achieve your goals with TANSAM-LMS.
+              everywhere. Learn, grow, and achieve your goals with Broadino.
             </p>
             <div className="subscribe-box">
               <input type="email" placeholder="Enter your email..." />
@@ -415,12 +415,13 @@ useEffect(() => {
               <h4>Contact Us</h4>
               <ul>
                 <li>
-                  <span className="contact-label">Call:</span> +91 9884035145
+                  <span className="contact-label">Call:</span> 
+                  {/* +91 9884035145 */}
                 </li>
                 <li>
                   <span className="contact-label">Email:</span>{" "}
                   <a href="mailto:info@tansam.org" className="contact-email">
-                    info@tansam.org
+                    {/* info@tansam.org */}
                   </a>
                 </li>
               </ul>
