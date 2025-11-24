@@ -86,7 +86,7 @@ const handleSubmit = async (e) => {
     <div className="signin-container">
       <div className="signin-left">
         <h1 className="signin-title">
-          Welcome to <span>TANSAM - LMS</span>
+          Welcome to <span>Broadino</span>
         </h1>
 
         <form className="signin-form" onSubmit={handleSubmit}>
