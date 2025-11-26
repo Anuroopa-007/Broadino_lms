@@ -79,8 +79,8 @@ const MyCourse = () => {
       if (res.ok) setCourse(data);
        else toast.error("Failed to load course info");
     } catch (err) {
-      console.error(err);
-       toast.error("Failed to load course info");
+      // console.error(err);
+      //  toast.error("Failed to load course info");
     }
   };
 
@@ -185,7 +185,7 @@ const fetchProgress = async () => {
     setEnabledLessons(enabledSet);
   } catch (err) {
     console.error("Failed to fetch progress", err);
-    toast.error("Failed to fetch progress");
+    // toast.error("Failed to fetch progress");
   }
 };
 
