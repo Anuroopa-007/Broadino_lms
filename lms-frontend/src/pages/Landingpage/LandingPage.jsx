@@ -1,7 +1,7 @@
 import React, { useEffect, useState } from "react";
 import "./LandingPage.css";
 import heroImg from "../../assets/main_lms.png";
-import herologo from "../../assets/tansamoldlogo.png";
+import herologo from "../../assets/broadino.png";
 import { Link, useNavigate } from "react-router-dom";
 import PlansSection from "./PlansSection";
 import FAQ from "./FAQ.jsx";
@@ -161,7 +161,7 @@ useEffect(() => {
           <ul className="nav-links">
             <li onClick={() => scrollToSection("home")}>Home</li>
             <li>
-              <Link to="/courseslist">Courses</Link>  {/* Navigate to courses page */}
+              <Link to="/">Courses</Link>  {/* Navigate to courses page */}
             </li>
             <li onClick={() => scrollToSection("testimonials")}>Testimonials</li>
           </ul>
@@ -174,9 +174,7 @@ useEffect(() => {
           <div className="text-content">
             <h1>Advancing Knowledge for the Future</h1>
             <p>
-              Learn from industry experts, educators, and professionals.
-              Join thousands of learners upgrading their skills and shaping the
-              future through powerful learning experiences on Tansam LMS.
+             A Learning Management System (LMS) provides students and learners with a centralized platform to access lessons, assignments, and learning resources anytime. It also helps them track their progress, complete assessments, and communicate with instructors more effectively.
             </p>
             <button
               className="get-started-btn"
@@ -184,23 +182,6 @@ useEffect(() => {
             >
               Explore Courses
             </button>
-
-            <div class="stats">
-              <div>
-                <h3 data-num="12K+">12K+</h3>
-                <p>Active Students</p>
-              </div>
-              <div>
-                <h3 data-num="500+">500+</h3>
-                <p>College Collaborations</p>
-              </div>
-              <div>
-                <h3 data-num="50+">50+</h3>
-                <p>Industries Collaborations</p>
-              </div>
-            </div>
-
-
           </div>
 
           <div className="image-content">
@@ -344,30 +325,16 @@ useEffect(() => {
           </div>
         </div>
       </section> */}
-      <FAQ />
+      {/* <FAQ />
 
       <section className="trusted-section" id="testimonials">
         <div className="trusted-left">
           <h4>Learner Feedback</h4>
           <h2>Trusted by Learners Around the World</h2>
           <p>
-            TANSAM-LMS has helped thousands of learners improve their skills,
+            BROADINO-LMS has helped thousands of learners improve their skills,
             achieve goals, and grow through continuous learning.
           </p>
-          <div className="trusted-stats">
-            <div>
-              <h3>98%</h3>
-              <p>Course Completion Rate</p>
-            </div>
-            <div>
-              <h3>15K+</h3>
-              <p>Positive Reviews</p>
-            </div>
-            <div>
-              <h3>120+</h3>
-              <p>Partner Organizations</p>
-            </div>
-          </div>
         </div>
 
         <div className="trusted-right">
@@ -376,7 +343,7 @@ useEffect(() => {
           </div>
           <div className="review-box">
             <p>
-              “TANSAM-LMS made learning engaging and easy to follow. The lessons
+              BROADINO-LMS made learning engaging and easy to follow. The lessons
               are clear, the instructors are great, and I love the flexibility.”
             </p>
             <h4>Dr. Emiliya Cart</h4>
@@ -384,15 +351,15 @@ useEffect(() => {
             <p className="reviews-count">24 Reviews</p>
           </div>
         </div>
-      </section>
+      </section> */}
 
       <footer className="footer" id="blog">
         <div className="footer-top">
           <div className="footer-left">
-            <h2 className="footer-logo">TANSAM-LMS</h2>
+            <h2 className="footer-logo">BROADINO-LMS</h2>
             <p>
               Providing accessible, high-quality education to learners
-              everywhere. Learn, grow, and achieve your goals with TANSAM-LMS.
+              everywhere. Learn, grow, and achieve your goals with BROADINO-LMS.
             </p>
             <div className="subscribe-box">
               <input type="email" placeholder="Enter your email..." />
@@ -415,12 +382,12 @@ useEffect(() => {
               <h4>Contact Us</h4>
               <ul>
                 <li>
-                  <span className="contact-label">Call:</span> +91 9884035145
+                  <span className="contact-label">Call:</span>  +1-703-638-1348 
                 </li>
                 <li>
                   <span className="contact-label">Email:</span>{" "}
                   <a href="mailto:info@tansam.org" className="contact-email">
-                    info@tansam.org
+                    info@broadino.org
                   </a>
                 </li>
               </ul>
