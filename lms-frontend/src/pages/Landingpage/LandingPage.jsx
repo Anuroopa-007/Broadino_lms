@@ -384,11 +384,11 @@ useEffect(() => {
               <h4>Contact Us</h4>
               <ul>
                 <li>
-                  <span className="contact-label">Call:</span> 
+                  <span className="contact-label">Call:  +1-703-638-1348</span> 
                   {/* +91 9884035145 */}
                 </li>
                 <li>
-                  <span className="contact-label">Email:</span>{" "}
+                  <span className="contact-label">Email: info@broadino.org</span>{" "}
                   <a href="mailto:info@broadino.org" className="contact-email">
                     {/* info@broadino.org */}
                   </a>
