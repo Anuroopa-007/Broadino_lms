@@ -23,38 +23,39 @@ export default function Dashboard() {
   };
 
   const topLearners = [
-    { name: "Dr. Ananya R.", role: "Resident, Cardiology", pts: 98 },
-    { name: "Dr. Mehul S.", role: "Intern, General Medicine", pts: 92 },
-    { name: "Dr. Priya V.", role: "PG, Orthopedics", pts: 88 },
+    { name: "🥇 Aarav K.", role: "Machine Learning Engineer Intern", pts: 98 },
+    { name: "🥈 Mehul S.", role: "Cloud & DevOps Specialist", pts: 92 },
+    { name: "🥉 Priya V.", role: "Cybersecurity Analyst Trainee", pts: 88 },
   ];
 
   const ungraded = [
     {
       id: 1,
-      title: "Diagnosis of Myocardial Infarction",
+      title: "Performance Analysis of Distributed Microservices",
       questions: "4 open-ended",
       learner: "Dr. Riya Singh",
     },
     {
       id: 2,
-      title: "Clinical Case Study: Appendicitis",
+      title: "Security Exploitation Case Study: IoT Device Breach",
       questions: "6 open-ended",
       learner: "Dr. Raj Malhotra",
     },
     {
       id: 3,
-      title: "Anatomy of the Human Brain",
+      title: "Explainable AI Evaluation: SHAP Interpretation Study",
       questions: "3 open-ended",
       learner: "Dr. Sneha Nair",
     },
   ];
 
   const courseList = [
-    { id: 1, title: "Human Anatomy", category: "Pre-Clinical", progress: 80 },
-    { id: 2, title: "Pathology Essentials", category: "Para-Clinical", progress: 60 },
-    { id: 3, title: "Clinical Skills in Surgery", category: "Clinical", progress: 45 },
-    { id: 4, title: "Pharmacology & Therapeutics", category: "Para-Clinical", progress: 70 },
+    { id: 1, title: "Distributed Systems & Microservices Architecture", category: "Foundational Computing Concepts", progress: 80 },
+    { id: 2, title: "Quantum Computing & Cryptographic Algorithms", category: "Applied Computing & Systems", progress: 60 },
+    { id: 3, title: "Deep Learning & Explainable AI (XAI)", category: "Advanced Computing Practices", progress: 45 },
+    { id: 4, title: "Edge Computing & IoT Security Frameworks", category: "Foundational Computing Concepts", progress: 70 },
   ];
+
 
   return (
     <div className="dashboard-app">
@@ -65,7 +66,7 @@ export default function Dashboard() {
           {/* Top Greeting & Quick Actions */}
           <div className="top-actions">
             <h2 className="greeting">
-              Good morning, Dr. Bagus <span role="img" aria-label="hand">👋</span>
+            <span role="img" aria-label="hand"></span>
             </h2>
             <div className="quick-actions">
               <button className="qa-btn course" onClick={() => navigate("/add-user")}>🧑‍⚕️ Add Student</button>
@@ -87,7 +88,7 @@ export default function Dashboard() {
                   <div className="card-body" style={{ justifyContent: "space-between" }}>
                     <div className="issued-right">
                       <div className="big">856</div>
-                      <div className="muted tiny">Active MBBS Students</div>
+                      <div className="muted tiny">Active Students</div>
                       <div style={{ width: "120px", marginTop: 10 }}>
                         <LineChart small />
                       </div>
@@ -204,9 +205,9 @@ export default function Dashboard() {
                 <div className="card-header">Instructor Insights</div>
                 <div className="card-body">
                   <ul className="tips-list">
-                    <li>🩻 Radiology session attendance up by 10%</li>
-                    <li>🧬 Anatomy module updated successfully</li>
-                    <li>💉 Add simulation-based surgery modules</li>
+                    <li>🧠 AI model accuracy improved by 8%</li>
+                    <li>🔧 Microservices deployment optimized successfully</li>
+                    <li>🔧 Microservices deployment optimized successfullys</li>
                   </ul>
                 </div>
               </div>
