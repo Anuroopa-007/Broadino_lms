@@ -5,6 +5,7 @@ import { useNavigate, useParams } from "react-router-dom";
 import { ToastContainer, toast } from "react-toastify";
 import "react-toastify/dist/ReactToastify.css";
 
+
 import { useLocation } from "react-router-dom";
 import {
   CheckCircle,
@@ -26,7 +27,10 @@ import {
   CHAPTER_API,
   QUIZ_API,
   PROGRESS_API,
+  AUTH_API,
 } from "../../../config/apiConfig";
+
+const FILE_BASE = import.meta.env.VITE_UPLOADS_BASE;
 
 const MyCourse = () => {
   const navigate = useNavigate();
@@ -49,6 +53,23 @@ const MyCourse = () => {
   const location = useLocation();
   const [activeTab, setActiveTab] = useState("overview");
 
+  const getFileUrl = (src) => {
+  if (!src) return "";
+
+  // Normalize path: replace backslashes with forward slashes
+  let cleanSrc = src.replace(/\\/g, "/");
+
+  // Remove any leading "uploads/" (one or more times)
+  cleanSrc = cleanSrc.replace(/^(\/?uploads\/)+/, "");
+
+  // Ensure no double slash in base
+  const base = FILE_BASE.endsWith("/") ? FILE_BASE.slice(0, -1) : FILE_BASE;
+
+  return `${base}/${cleanSrc}`;
+};
+
+  /** Fetch course info */
+  
 
   /** Fetch course info */
   const fetchCourse = async () => {
@@ -56,10 +77,10 @@ const MyCourse = () => {
       const res = await fetch(`${COURSE_API}/${courseId}`, { credentials: "include" });
       const data = await res.json();
       if (res.ok) setCourse(data);
-      else toast.error("Failed to load course info");
+       else toast.error("Failed to load course info");
     } catch (err) {
       console.error(err);
-      toast.error("Failed to load course info");
+       toast.error("Failed to load course info");
     }
   };
 
@@ -108,19 +129,21 @@ const MyCourse = () => {
     }
   };
 
-  const fetchCustomId = async () => {
-    try {
-      const res = await fetch("http://localhost:5000/api/auth/me", {
-        credentials: "include"
-      });
-      const data = await res.json();
-      if (res.ok && data?.user?.profile?.custom_id) {
-        setCustomId(data.user.profile.custom_id);
-      }
-    } catch (err) {
-      console.error("Failed to fetch custom_id", err);
+ const fetchCustomId = async () => {
+  try {
+    const resUser = await fetch(`${AUTH_API}/me`, {
+      credentials: "include"
+    });
+
+    const data = await resUser.json();   // ✅ FIXED
+
+    if (resUser.ok && data?.user?.profile?.custom_id) {
+      setCustomId(data.user.profile.custom_id);
     }
-  };
+  } catch (err) {
+    console.error("Failed to fetch custom_id", err);
+  }
+};
 
   /** Fetch progress from server and set completed set */
   /** Fetch progress from server and set completed set */
@@ -309,7 +332,7 @@ const fetchProgress = async () => {
     const lesson = lessons.find((l) => l.key === activeLesson);
     if (!lesson) return;
 
-    const fileUrl = `http://localhost:5000/${lesson.src}`;
+    const fileUrl = getFileUrl(lesson.src);
     const fileExt = lesson.src?.split(".").pop().toLowerCase();
 
     if (lesson.type === "ppt" && fileExt === "pptx") {
@@ -366,7 +389,7 @@ const fetchProgress = async () => {
     const lesson = lessons.find((l) => l.key === activeLesson);
     if (!lesson) return <p>Select a lesson to start learning.</p>;
 
-    const fileUrl = `http://localhost:5000/${lesson.src}`;
+    const fileUrl = getFileUrl(lesson.src);
 
     switch (lesson.type) {
       case "video":

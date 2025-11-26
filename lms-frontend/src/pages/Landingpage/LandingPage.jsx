@@ -176,7 +176,7 @@ useEffect(() => {
             <p>
               Learn from industry experts, educators, and professionals.
               Join thousands of learners upgrading their skills and shaping the
-              future through powerful learning experiences on Tansam LMS.
+              future through powerful learning experiences on Broadino LMS.
             </p>
             <button
               className="get-started-btn"
@@ -420,8 +420,8 @@ useEffect(() => {
                 </li>
                 <li>
                   <span className="contact-label">Email:</span>{" "}
-                  <a href="mailto:info@tansam.org" className="contact-email">
-                    {/* info@tansam.org */}
+                  <a href="mailto:info@broadino.org" className="contact-email">
+                    {/* info@broadino.org */}
                   </a>
                 </li>
               </ul>
