@@ -4,7 +4,7 @@ import { Mail, Lock, Eye, EyeOff } from "lucide-react";
 import { useNavigate, useLocation } from "react-router-dom";
 import { AUTH_API } from "../../config/apiConfig";
 import doctorImage from "../../assets/background.png";
-import logoImage from "../../assets/tansamoldlogo.png";
+import logoImage from "../../assets/siteIcon.png";
 
 const LoginPage = () => {
   const [email, setEmail] = useState("");
@@ -86,7 +86,7 @@ const handleSubmit = async (e) => {
     <div className="signin-container">
       <div className="signin-left">
         <h1 className="signin-title">
-          Welcome to <span>Broadino</span>
+          Welcome to <span>Broadino - LMS</span>
         </h1>
 
         <form className="signin-form" onSubmit={handleSubmit}>

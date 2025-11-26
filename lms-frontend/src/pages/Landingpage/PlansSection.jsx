@@ -18,47 +18,47 @@ const labs = [
   {
     icon: "💡",
     title: "Innovative Manufacturing",
-    desc: "TANSAM with Siemens powers precision manufacturing through reverse engineering and 3D metal printing.",
+    desc: "Broadino with Siemens powers precision manufacturing through reverse engineering and 3D metal printing.",
   },
   {
     icon: "🏭",
     title: "Smart Factory",
-    desc: "TANSAM Smart Factory uses Siemens Industry 4.0 tools to optimize and transform manufacturing.",
+    desc: "Broadino Smart Factory uses Siemens Industry 4.0 tools to optimize and transform manufacturing.",
   },
   {
     icon: "🕶️",
     title: "AR | VR | XR",
-    desc: "TANSAM AR/VR/MR Lab develops immersive simulations enhancing training, learning, and real-world workflows.",
+    desc: "Broadino AR/VR/MR Lab develops immersive simulations enhancing training, learning, and real-world workflows.",
   },
   {
     icon: "📋",
     title: "Product Lifecycle Management",
-    desc: "TANSAM PLM Center uses Siemens Teamcenter to streamline product lifecycle, collaboration, and innovation.",
+    desc: "Broadino PLM Center uses Siemens Teamcenter to streamline product lifecycle, collaboration, and innovation.",
   },
   {
     icon: "📦",
     title: "Product Innovation",
-    desc: "TANSAM Product Innovation Center uses Siemens tools to accelerate efficient, creative product development.",
+    desc: "Broadino Product Innovation Center uses Siemens tools to accelerate efficient, creative product development.",
   },
   {
     icon: "✅",
     title: "Predictive Engineering",
-    desc: "TANSAM Predictive Engineering Center uses Siemens tools to simulate, analyze, and optimize products.",
+    desc: "Broadino Predictive Engineering Center uses Siemens tools to simulate, analyze, and optimize products.",
   },
   {
     icon: "⚙️",
     title: "Asset Performance",
-    desc: "TANSAM Asset Performance uses advanced engineering & computing methods to determine predictive and preventive asset performance.",
+    desc: "Broadino Asset Performance uses advanced engineering & computing methods to determine predictive and preventive asset performance.",
   },
   {
     icon: "🔗",
     title: "Industrial IoT & Equipment",
-    desc: "TANSAM Industrial IIoT & Equipment performance center uses edge computing and industrial automation tools to enhance efficiency and productivity.",
+    desc: "Broadino Industrial IIoT & Equipment performance center uses edge computing and industrial automation tools to enhance efficiency and productivity.",
   },
   {
     icon: "🤖",
     title: "Digital Technologies",
-    desc: "TANSAM Digital Technologies center uses Artificial Intelligence & Machine Learning techniques for vision computing and digitization.",
+    desc: "Broadino Digital Technologies center uses Artificial Intelligence & Machine Learning techniques for vision computing and digitization.",
   },
 ];
 

@@ -174,7 +174,9 @@ useEffect(() => {
           <div className="text-content">
             <h1>Advancing Knowledge for the Future</h1>
             <p>
-             A Learning Management System (LMS) provides students and learners with a centralized platform to access lessons, assignments, and learning resources anytime. It also helps them track their progress, complete assessments, and communicate with instructors more effectively.
+              Learn from industry experts, educators, and professionals.
+              Join thousands of learners upgrading their skills and shaping the
+              future through powerful learning experiences on Broadino LMS.
             </p>
             <button
               className="get-started-btn"
@@ -332,7 +334,7 @@ useEffect(() => {
           <h4>Learner Feedback</h4>
           <h2>Trusted by Learners Around the World</h2>
           <p>
-            BROADINO-LMS has helped thousands of learners improve their skills,
+            Broadino has helped thousands of learners improve their skills,
             achieve goals, and grow through continuous learning.
           </p>
         </div>
@@ -343,7 +345,7 @@ useEffect(() => {
           </div>
           <div className="review-box">
             <p>
-              BROADINO-LMS made learning engaging and easy to follow. The lessons
+              “Broadino made learning engaging and easy to follow. The lessons
               are clear, the instructors are great, and I love the flexibility.”
             </p>
             <h4>Dr. Emiliya Cart</h4>
@@ -356,10 +358,10 @@ useEffect(() => {
       <footer className="footer" id="blog">
         <div className="footer-top">
           <div className="footer-left">
-            <h2 className="footer-logo">BROADINO-LMS</h2>
+            <h2 className="footer-logo">Broadino</h2>
             <p>
               Providing accessible, high-quality education to learners
-              everywhere. Learn, grow, and achieve your goals with BROADINO-LMS.
+              everywhere. Learn, grow, and achieve your goals with Broadino.
             </p>
             <div className="subscribe-box">
               <input type="email" placeholder="Enter your email..." />
@@ -382,12 +384,13 @@ useEffect(() => {
               <h4>Contact Us</h4>
               <ul>
                 <li>
-                  <span className="contact-label">Call:</span>  +1-703-638-1348 
+                  <span className="contact-label">Call:</span> 
+                  {/* +91 9884035145 */}
                 </li>
                 <li>
                   <span className="contact-label">Email:</span>{" "}
-                  <a href="mailto:info@tansam.org" className="contact-email">
-                    info@broadino.org
+                  <a href="mailto:info@broadino.org" className="contact-email">
+                    {/* info@broadino.org */}
                   </a>
                 </li>
               </ul>

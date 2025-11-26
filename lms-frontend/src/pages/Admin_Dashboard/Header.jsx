@@ -50,7 +50,7 @@ export default function Header() {
 
       {/* Center - Title */}
       <div className="topbar-center">
-        <h1 className="title1">TANSAM - LMS</h1>
+        <h1 className="title1">BROADINO - LMS</h1>
       </div>
 
       {/* Right - User Info */}
