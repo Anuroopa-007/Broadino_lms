@@ -1,7 +1,7 @@
 import React, { useEffect, useState } from "react";
 import { useNavigate } from "react-router-dom";
 import { AUTH_API } from "../../config/apiConfig";
-import herologo from "../../assets/tansamoldlogo.png";
+import herologo from "../../assets/siteIcon.png";
 import "./Header.css";
 
 export default function Header() {

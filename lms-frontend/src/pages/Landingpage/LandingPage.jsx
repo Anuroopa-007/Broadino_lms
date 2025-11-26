@@ -194,7 +194,7 @@ useEffect(() => {
 
       {/* ===== COURSES SECTION (Dynamic) ===== */}
       <section className="courses" id="courses">
-        <h2>SkillSpace</h2>
+        <h2>Courses+</h2>
 
         {/* Displaying the 3x3 grid of courses */}
         <div className="courses-grid">
@@ -237,7 +237,7 @@ useEffect(() => {
                   {/* ONLY these two are clickable - using your original class names */}
                 <div className="bottom-row">
   <span className="price" onClick={() => handleEnroll(course.course_id)}>Enroll</span>
-  <button className="more-btn" onClick={() => handleMore(course)}>More</button>
+  {/* <button className="more-btn" onClick={() => handleMore(course)}>More</button> */}
 </div>
 
                 </div>
