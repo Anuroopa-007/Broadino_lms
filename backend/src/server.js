@@ -29,7 +29,7 @@ const app = express();
 // ✅ Middlewares
 app.use(
   cors({
-    origin: "http://localhost:5173", // ⚠️ Change if your frontend runs elsewhere
+     origin: ["https://broadino.tansam.org", "http://localhost:5173"],
     credentials: true, // ✅ Allow cookies
   })
 );
