@@ -28,8 +28,7 @@ export default function Header() {
   }, []);
 
   const IMAGE_BASE =
-    import.meta.env.VITE_API_BASE_URL?.replace(/\/api\/?$/, "") ||
-    "http://localhost:5000";
+    import.meta.env.VITE_API_BASE_URL?.replace(/\/api\/?$/, "");
 
   const imagePath =
     admin?.profile?.image_path?.replace(/\\/g, "/")?.replace(/^\/+/, "") || "";

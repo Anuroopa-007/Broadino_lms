@@ -26,7 +26,7 @@ useEffect(() => {
   const fetchData = async () => {
     try {
       // 1️⃣ Fetch user session
-      const resUser = await fetch("http://localhost:5000/api/auth/me", {
+      const resUser = await fetch("https://broadino.tansam.org/api", {
         method: "GET",
         credentials: "include",
       });
@@ -198,7 +198,7 @@ const getDisplayedDays = () => {
               <img
                 src={
                   profile.image_path
-                    ? `http://localhost:5000/${profile.image_path.replace("\\", "/")}`
+                    ? `https://broadino.tansam.org/api${profile.image_path.replace("\\", "/")}`
                     : "https://i.pravatar.cc/100"
                 }
                 alt="User"

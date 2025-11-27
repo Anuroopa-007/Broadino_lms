@@ -37,7 +37,7 @@ export default function Quiz() {
   useEffect(() => {
     const fetchUserProfile = async () => {
       try {
-        const res = await fetch("http://localhost:5000/api/auth/me", {
+        const res = await fetch("https://broadino.tansam.org/api", {
           credentials: "include",
         });
         const data = await res.json();
