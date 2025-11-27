@@ -21,8 +21,7 @@ export default function BasicInfoTab({
   const navigate = useNavigate(); // ✅ Initialize navigate
 
   const IMAGE_BASE =
-    import.meta.env.VITE_API_BASE_URL?.replace(/\/api\/?$/, "") ||
-    "http://localhost:5000";
+    import.meta.env.VITE_API_BASE_URL?.replace(/\/api\/?$/, "");
 
   const deleteSavedCourse = async (courseId) => {
     if (!window.confirm("Are you sure you want to delete this course?")) return;

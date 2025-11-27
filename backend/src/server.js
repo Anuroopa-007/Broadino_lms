@@ -29,7 +29,7 @@ const app = express();
 // ✅ Middlewares
 app.use(
   cors({
-    origin: "http://localhost:5173", // ⚠️ Change if your frontend runs elsewhere
+    origin: "https://broadino.tansam.org/api", // ⚠️ Change if your frontend runs elsewhere
     credentials: true, // ✅ Allow cookies
   })
 );
@@ -55,5 +55,5 @@ app.get("/", (req, res) => {
 // ✅ Start server
 const PORT = process.env.PORT || 5000;
 app.listen(PORT, () =>
-  console.log(`✅ Server running on http://localhost:${PORT}`)
+  console.log(`✅ Server running on https://broadino.tansam.org/api:${PORT}`)
 );
