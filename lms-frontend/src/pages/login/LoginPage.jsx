@@ -4,7 +4,7 @@ import { Mail, Lock, Eye, EyeOff } from "lucide-react";
 import { useNavigate, useLocation } from "react-router-dom";
 import { AUTH_API } from "../../config/apiConfig";
 import doctorImage from "../../assets/background.png";
-import logoImage from "../../assets/siteIcon.png";
+import logoImage from "../../assets/SiteIcon.png";
 
 const LoginPage = () => {
   const [email, setEmail] = useState("");
